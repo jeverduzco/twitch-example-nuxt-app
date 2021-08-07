@@ -5,7 +5,7 @@
       app
       flat
     >
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title v-text="country ? country.data.name : title" />
       <v-spacer />
     </v-app-bar>
     <v-main>
@@ -22,12 +22,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'DefaultLayout',
   data() {
     return {
       title: 'Datos de Países',
     }
+  },
+    computed: {
+    // Get user from store
+    ...mapGetters({
+      country: 'country/country',
+    }),
   },
 }
 </script>

@@ -69,6 +69,19 @@
         </v-list-item>
       </v-list>
     </v-card-text>
+    <v-divider />
+    <v-card-actions>
+      <v-spacer />
+      <v-btn
+        color="primary"
+        nuxt
+        text
+        block
+        to="/"
+      >
+        Regresar
+      </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 <script>
@@ -79,6 +92,12 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  created() {
+    this.$store.commit('country/setCountry', this.country)
+  },
+  destroyed() {
+    this.$store.commit('country/setCountry', null)
   },
 }
 </script>
