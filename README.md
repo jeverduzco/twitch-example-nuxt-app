@@ -1,4 +1,4 @@
-# holidays-example
+# Application of country details in NuxtJS
 
 ## Build Setup
 
